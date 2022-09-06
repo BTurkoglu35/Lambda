@@ -107,7 +107,7 @@ public class Lambda01 {
 
     // Task : list elelmanlarinin character sayisini ters sirali olarak tekrarsiz print ediniz..
     public static void strKarakterSayisiYazdir(List<String> yemek) {
-
+        yemek.stream().map(String::length).sorted(Comparator.reverseOrder()).forEach(Utils::ayniSatirdaBosluklaYazdir);
     }
 
     // Task :TODO list elemanlarinin son harfine gore ters sirali print ediniz.
@@ -121,9 +121,8 @@ public class Lambda01 {
 
     // Task : listin elemanlarin karakterlerinin cift sayili  karelerini hesaplayan,ve karelerini tekrarsiz
     // buyukten kucuge sirali  print ediniz..
-    public static void karakterCiftKareBuyuktenKucuge(List<String> yemek) {
-
-
+    public static void ciftSayiliKareHesapla(List<String> list){
+        list.stream().map(String::length).map(Utils::karesiniAl).distinct().sorted(Comparator.reverseOrder()).forEach(Utils::ayniSatirdaBosluklaYazdir);
     }
 
     // TODO Task : List elelmmalarinin karakter sayisini 7 ve 7 'den az olma durumunu kontrol ediniz.
@@ -146,14 +145,17 @@ public class Lambda01 {
 
 
     // Task : List elelmanlarinin "W" ile baslamasını kontrol ediniz.
-    public static void basHarfiWIleBaslayan(List<String> yemek) {
+    public static void basHarfiWIleBaslayanHerhangiBirKelimeVarMi(List<String> list) {
 
-
+        System.out.println(list.stream().anyMatch(t -> t.startsWith("w") || t.startsWith("W")));
     }
     // TODO Task : List elelmanlarinin "x" ile biten en az bir elemaı kontrol ediniz.
-    public static void xIleBitenEleman(List<String> yemek) {
 
-    }
+        public static void xIleBitenHerhangiBirElemanVarMi(List<String> list) {
+            System.out.println(list.stream().anyMatch(t -> t.endsWith("x")));
+
+        }
+
 
     // TODO Task : Karakter sayisi en buyuk elemani yazdiriniz.
     public static void karkterEnFazla(List<String> yemek) {

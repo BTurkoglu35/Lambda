@@ -38,6 +38,6 @@ public class Runner01 extends Lambda01{
         System.out.println("**************");
         Lambda03.isteneSayiIlkXKuvvetPrint(3,4);
         System.out.println("**************");
-        Lambda03.liste(Arrays.toString(Lambda03.arr));
+     //   Lambda03.liste(Arrays.toString(Lambda03.arr));
     }
 }
