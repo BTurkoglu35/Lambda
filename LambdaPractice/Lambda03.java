@@ -45,17 +45,25 @@ public class Lambda03 {
         int top= IntStream.rangeClosed(1,x*2).filter(Utils::tekElemanlariSec).sum();
         return top;
     }
+    //2.yol
+ //   public static int toplaIlkXTek(int x) {
+ //     return IntStream.
+ //             iterate(1,t->t+2).//1 den sonsuza kadar elemanlari 2 artirarak akisa alir
+ //                     limit(x).//akisdaki ilk x degeri alir
+ //                     sum();
+ // }
 
 
     //TASK 05 --> 2'nin ilk x kuvvetini ekrana yazdiran programi  create ediniz.
     public static void ikininIlkXKuvvetPrint(int x) {
-        IntStream.rangeClosed(0,x).map(t-> (int) Math.pow(2,t)).forEach(t-> System.out.print(t+" "));
+        IntStream.rangeClosed(1,x).map(t-> (int) Math.pow(2,t)).forEach(t-> System.out.print(t+" "));
+        //    IntStream.iterate(2,t->t*2).limit(x).forEach(Utils::ayniSatirdaBosluklaYazdir);
     }
 
     //TASK 06 --> Istenilen bir sayinin ilk x kuvvetini ekrana yazdiran programi  create ediniz.
     public static void isteneSayiIlkXKuvvetPrint(int y, int x) {
         IntStream.rangeClosed(0,x).map(t-> (int) Math.pow(2,t)).forEach(t-> System.out.print(t+" "));
-
+        //    IntStream.iterate(y,t->t*y).limit(x).forEach(Utils::ayniSatirdaBosluklaYazdir);
     }
 
     // TODO TASK 07 --> Istenilen bir sayinin faktoriyelini hesaplayan programi  create ediniz.
@@ -69,7 +77,9 @@ public class Lambda03 {
     public static double xKuvveti(int y, int x) {
         IntStream.range(x,x+1).map(t-> (int) Math.pow(y,x)).forEach(Utils::ayniSatirdaBosluklaYazdir);
         return 0;
+        //return IntStream.iterate(sayi,t->t*sayi).limit(x).reduce(0,(t,u)->u);
     }
+
 
 
 }
